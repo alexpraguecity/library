@@ -1,5 +1,6 @@
 const { Pool } = require('pg');
 
+//parses the Postgres connection details as shown
 const pool = new Pool({
   user: process.env.POSTGRES_USER,
   host: process.env.POSTGRES_HOST,
@@ -8,6 +9,7 @@ const pool = new Pool({
   port: process.env.POSTGRES_PORT,
 });
 
+//exports the query method
 module.exports = {
   query: (text, params) => pool.query(text, params),
 };
