@@ -97,6 +97,9 @@ If neccesary, you can test one of the tables by using:
 SELECT * FROM books;
 
 This should bring up the entire list.
+### Accounts
+Currently 2 accounts, the reader and librarian.
+Both have a password of 1234.
 
 ### Environmental Variables
 - Next is to create the .env file within the directory preferably within a source code editer such as Visual Studio Code to ensure no errors are made. Within the file you will be required to add the following code:
