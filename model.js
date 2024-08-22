@@ -1,12 +1,20 @@
 const db = require('./postgres'); //imports the database connection
 
-//the function for retrieving all of the books from the database
+// the function retrieves the user by use of the input username
+async function getUserByUsername(username) {
+  const result = await db.query('SELECT * FROM users WHERE username = $1', [username]);
+  return result.rows[0];
+}
+
+module.exports = { getBooks, addBook, updateBook, deleteBook, getUserByUsername };
+
+// the function for retrieving all of the books from the database
 async function getBooks() {
   const result = await db.query('SELECT * FROM books');
   return result.rows;
 } 
 
-//the function for adding a new book to the databse
+// the function for adding a new book to the databse
 async function addBook(title, author, genre) {
     const result = await db.query(
       'INSERT INTO books (title, author, genre) VALUES ($1, $2, $3) RETURNING *',
@@ -15,7 +23,7 @@ async function addBook(title, author, genre) {
     return result.rows[0];
   }
 
-  //the function for updating an existing book in the database
+  // the function for updating an existing book in the database
   async function updateBook(id, title, author, genre) {
     const result = await db.query(
       'UPDATE books SET title = $1, author = $2, genre = $3 WHERE id = $4 RETURNING *',
@@ -24,7 +32,7 @@ async function addBook(title, author, genre) {
     return result.rows[0];
   }
 
-  //the function for deleting a specific book from the databse by using its id
+  // the function for deleting a specific book from the databse by using its id
   async function deleteBook(id) {
     const result = await db.query('DELETE FROM books WHERE id = $1 RETURNING *', [id]);
     return result.rows[0];
