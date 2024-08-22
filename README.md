@@ -42,9 +42,11 @@ The Library is a web application designed to view and manage a collection of boo
 - Node.js and npm installed
 - PostgreSQL installed and running
 
-### Clone the Repository
-git clone https://github.com/alexpraguecity/library.git
+### Clone the Repository + Link to live
+- git clone https://github.com/alexpraguecity/library.git
 cd library -- to navigate to the directory
+- Library Application live on Digital Ocean
+ https://orca-app-m4b96.ondigitalocean.app/
 
 ### Installing Dependencies
 - After cloning the repo and navigating to the directory the next steps   include the installation of depencies by using: npm install.
