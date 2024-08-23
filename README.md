@@ -1,4 +1,4 @@
-# The Library Application
+# ICA Project WAAD Library Application Prototype 
 - https://github.com/alexpraguecity/library
 ## Overview
 The Library is a web application designed to view and manage a collection of books. There are two types of users: Readers and Librarians. Readers are able to view the collection of books available in the catalog without requiring authorization, while librarians are granting special priveldges to manage the library all together by adding, viewing, updating, and even deleting books.
